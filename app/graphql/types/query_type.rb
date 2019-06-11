@@ -6,7 +6,7 @@ module Types
     field :items, [Types::ItemType], null: false,
       description: "Returns a lsit of items in the Martian Library"
     def items
-      Item.all
+       Item.preload(:user)
     end
   end
 end
